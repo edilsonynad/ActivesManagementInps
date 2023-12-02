@@ -15,8 +15,8 @@
 		<tomee.maven.plugin.version>9.1.1</tomee.maven.plugin.version>
 
 		<igrp.db.user>postgres</igrp.db.user>
-		<igrp.db.password>eLcv1997@</igrp.db.password>
-		<igrp.db.dsn>jdbc:postgresql://localhost:5432/db_igrp</igrp.db.dsn>
+		<igrp.db.password>pxDHZ3Nmx7sjJh7c</igrp.db.password>
+		<igrp.db.dsn>jdbc:postgresql://db.aecavvrebhhovjdrrwac.supabase.co:5432/postgres</igrp.db.dsn>
 		<igrp.db.driver>org.postgresql.Driver</igrp.db.driver>
 		<igrp.migration.location>classpath:nosi/core/db/migration/igrp/postgres</igrp.migration.location> <!-- Ex: classpath:nosi/core/db/migration/igrp/postgres  -->
 
