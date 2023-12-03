@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/activesmanagementinps/images/IGRP/IGRP2.4/app/active_management_inps/registro_de_ativos/Registro_de_ativos.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/activesmanagementinps/images/IGRP/IGRP2.4</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Registro_de_ativos</page>
+    <app>active_management_inps</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>Registro de Ativos</package_db>
+        <package_html>Registro de Ativos</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=85</preserve_url>
+    </plsql>
+    <slide-menu file="../../../xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../../../xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Registro de Ativos</title>
+        <form_1 type="form" xml-type="form" title="Informações do ativo" gen-type="container" gen-group="">
+            <fields>
+                <nome name="p_nome" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Nome</label>
+                    <value>Deserunt omnis laudantium adipiscing natus</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </nome>
+                <codigo name="p_codigo" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Código</label>
+                    <value>Rem sit sed mollit natus</value>
+                </codigo>
+                <estado name="p_estado" type="select" placeholder="" multiple="false" tags="false" load_service_data="false" domain="" maxlength="250" required="false" change="false" disabled="false" java-type="">
+                    <label>Estado</label>
+                    <list>
+                        <option>
+                            <text>--</text>
+                            <value/>
+                        </option>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                </estado>
+                <categoria name="p_categoria" type="select" placeholder="" multiple="false" tags="false" load_service_data="false" domain="" maxlength="250" required="false" change="false" disabled="false" java-type="">
+                    <label>Categoria</label>
+                    <list>
+                        <option>
+                            <text>--</text>
+                            <value/>
+                        </option>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                </categoria>
+                <garantia name="p_garantia" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" java-type="">
+                    <label>Garantia</label>
+                    <value>161</value>
+                </garantia>
+            </fields>
+        </form_1>
+        <sectionheader_1 type="sectionheader" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <sectionheader_1_text type="text" name="p_sectionheader_1_text" persist="true" maxlength="4000">
+                    <value>
+                        <![CDATA[<p>Informa&ccedil;&otilde;es Gerais&nbsp;</p>
+]]>
+                    </value>
+                </sectionheader_1_text>
+            </fields>
+        </sectionheader_1>
+        <sectionheader_2 type="sectionheader" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <sectionheader_2_text type="text" name="p_sectionheader_2_text" persist="true" maxlength="4000">
+                    <value>
+                        <![CDATA[<p>Informa&ccedil;&otilde;es de compra/venda</p>
+]]>
+                    </value>
+                </sectionheader_2_text>
+            </fields>
+        </sectionheader_2>
+        <buyandsell type="form" xml-type="form" title="Informações de compra e venda" gen-type="container" gen-group="">
+            <fields>
+                <valor_da_compra name="p_valor_da_compra" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Valor da compra</label>
+                    <value>Laudantium totam anim dolor accusantium</value>
+                </valor_da_compra>
+                <valor_da_venda name="p_valor_da_venda" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Valor da venda </label>
+                    <value>Amet rem consectetur officia doloremque</value>
+                </valor_da_venda>
+                <data_da_compra name="p_data_da_compra" type="date" format="d-m-Y" enableTime="false" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="">
+                    <label>Data da compra </label>
+                    <value>02-04-2016</value>
+                </data_da_compra>
+                <data_da_venda name="p_data_da_venda" type="date" format="d-m-Y" enableTime="false" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="">
+                    <label>Data da venda</label>
+                    <value>07-02-2014</value>
+                </data_da_venda>
+            </fields>
+        </buyandsell>
+        <atribuicao type="form" xml-type="form" title="Atribuição" gen-type="container" gen-group="">
+            <fields>
+                <departamento name="p_departamento" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Departamento</label>
+                    <value>Sed elit adipiscing magna deserunt</value>
+                </departamento>
+                <funcionario name="p_funcionario" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Funcionário </label>
+                    <value>Officia anim adipiscing labore aperiam</value>
+                </funcionario>
+            </fields>
+        </atribuicao>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

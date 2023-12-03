@@ -21,14 +21,18 @@
         <!-- Mapping your class here... 
 		Ex: <mapping class="nosi.webapps.active_management_inps.dao.Employee"/> 		-->  
         <mapping class="nosi.webapps.active_management_inps.dao.Ativos"/>  
-        <mapping class="nosi.webapps.active_management_inps.dao.Vistoria"/>
-        <mapping class="nosi.webapps.active_management_inps.dao.VistoriaHasAtivos"/>
-        <mapping class="nosi.webapps.active_management_inps.dao.Requisicao"/>
-        <mapping class="nosi.webapps.active_management_inps.dao.Geolocalizacao"/>
-        <mapping class="nosi.webapps.active_management_inps.dao.Utilizadores"/>
-        <mapping class="nosi.webapps.active_management_inps.dao.Contato"/>
-        <mapping class="nosi.webapps.active_management_inps.dao.Departamentos"/>
-        <mapping class="nosi.webapps.active_management_inps.dao.Marcas"/>
-        <mapping class="nosi.webapps.active_management_inps.dao.Fornecedores"/>
+        <mapping class="nosi.webapps.active_management_inps.dao.Vistoria"/>  
+        <mapping class="nosi.webapps.active_management_inps.dao.VistoriaHasAtivos"/>  
+        <mapping class="nosi.webapps.active_management_inps.dao.Requisicao"/>  
+        <mapping class="nosi.webapps.active_management_inps.dao.Geolocalizacao"/>  
+        <mapping class="nosi.webapps.active_management_inps.dao.Utilizadores"/>  
+        <mapping class="nosi.webapps.active_management_inps.dao.Contato"/>  
+        <mapping class="nosi.webapps.active_management_inps.dao.Departamentos"/>  
+        <mapping class="nosi.webapps.active_management_inps.dao.Marcas"/>  
+        <mapping class="nosi.webapps.active_management_inps.dao.Fornecedores"/>  
+        <mapping class="nosi.webapps.active_management_inps.dao.Transacoes"/>
+        <mapping class="nosi.webapps.active_management_inps.dao.Departamento"/>
+        <mapping class="nosi.webapps.active_management_inps.dao.Funcionarios"/>
+        <mapping class="nosi.webapps.active_management_inps.dao.Forcenecedor"/>
     </session-factory> 
 </hibernate-configuration>

@@ -1,18 +1,17 @@
 package nosi.webapps.active_management_inps.dao;
 
-import javax.persistence.GeneratedValue;
-import nosi.base.ActiveRecord.BaseActiveRecord;
-import jakarta.validation.constraints.Size;
-import javax.persistence.Table;
-import javax.persistence.NamedQuery;
-import javax.persistence.Entity;
-import jakarta.validation.constraints.NotNull;
-import javax.persistence.Id;
 import javax.persistence.Column;
+import jakarta.validation.constraints.Size;
+import nosi.base.ActiveRecord.BaseActiveRecord;
+import javax.persistence.Entity;
 import javax.persistence.GenerationType;
+import javax.persistence.NamedQuery;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Table;
+import javax.persistence.Id;
 
 /**
- * @author: Nositeste 02-12-2023
+ * @author: Nositeste 03-12-2023
 */
 //@XmlRootElement // Can be used for REST / XML API
 
@@ -29,23 +28,20 @@ public class Contato extends BaseActiveRecord<Contato> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idCONTATO", nullable = false, updatable = false)
+	@Column(name = "idcontato", nullable = false, updatable = false)
  	private Integer idcontato;
-	@Size(max = 45)
-	@Column(name = "telefone")
-	private String telefone;
 	@Size(max = 45)
 	@Column(name = "email")
 	private String email;
 	@Size(max = 45)
-	@Column(name = "facebook")
-	private String facebook;
+	@Column(name = "telefone")
+	private String telefone;
 	@Size(max = 45)
 	@Column(name = "site")
 	private String site;
-	@NotNull
-	@Column(name = "FORNECEDORES_idFORNECEDOR")
-	private Integer fornecedoresIdfornecedor;
+	@Size(max = 45)
+	@Column(name = "contatocol")
+	private String contatocol;
 
 	public Integer getIdcontato() { 
 		return this.idcontato;
@@ -53,14 +49,6 @@ public class Contato extends BaseActiveRecord<Contato> {
 
 	public void setIdcontato(Integer idcontato) {
 		 this.idcontato = idcontato;
-	}
-
-	public String getTelefone() { 
-		return this.telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		 this.telefone = telefone;
 	}
 
 	public String getEmail() { 
@@ -71,12 +59,12 @@ public class Contato extends BaseActiveRecord<Contato> {
 		 this.email = email;
 	}
 
-	public String getFacebook() { 
-		return this.facebook;
+	public String getTelefone() { 
+		return this.telefone;
 	}
 
-	public void setFacebook(String facebook) {
-		 this.facebook = facebook;
+	public void setTelefone(String telefone) {
+		 this.telefone = telefone;
 	}
 
 	public String getSite() { 
@@ -87,21 +75,20 @@ public class Contato extends BaseActiveRecord<Contato> {
 		 this.site = site;
 	}
 
-	public Integer getFornecedoresIdfornecedor() { 
-		return this.fornecedoresIdfornecedor;
+	public String getContatocol() { 
+		return this.contatocol;
 	}
 
-	public void setFornecedoresIdfornecedor(Integer fornecedoresIdfornecedor) {
-		 this.fornecedoresIdfornecedor = fornecedoresIdfornecedor;
+	public void setContatocol(String contatocol) {
+		 this.contatocol = contatocol;
 	}
 
 public static final class Field {
 	public static final String IDCONTATO = "idcontato";
-	public static final String TELEFONE = "telefone";
 	public static final String EMAIL = "email";
-	public static final String FACEBOOK = "facebook";
+	public static final String TELEFONE = "telefone";
 	public static final String SITE = "site";
-	public static final String FORNECEDORES_IDFORNECEDOR = "fornecedoresIdfornecedor";
+	public static final String CONTATOCOL = "contatocol";
 
 	private Field() {}
 	}

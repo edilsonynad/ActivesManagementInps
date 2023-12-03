@@ -1,18 +1,25 @@
 package nosi.webapps.active_management_inps.dao;
 
-import javax.persistence.GeneratedValue;
-import nosi.base.ActiveRecord.BaseActiveRecord;
-import jakarta.validation.constraints.Size;
-import javax.persistence.Table;
-import javax.persistence.NamedQuery;
-import javax.persistence.Entity;
-import jakarta.validation.constraints.NotNull;
-import javax.persistence.Id;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ManyToOne;
+import nosi.base.ActiveRecord.BaseActiveRecord;
 import javax.persistence.GenerationType;
+import javax.persistence.ForeignKey;
+import java.util.List;
+import javax.persistence.OneToMany;
+import javax.persistence.GeneratedValue;
+import jakarta.xml.bind.annotation.XmlTransient;
+import jakarta.validation.constraints.Size;
+import javax.persistence.JoinColumn;
+import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
+import jakarta.validation.constraints.NotNull;
+import javax.persistence.Table;
+import javax.persistence.Id;
 
 /**
- * @author: Nositeste 02-12-2023
+ * @author: Nositeste 03-12-2023
 */
 //@XmlRootElement // Can be used for REST / XML API
 
@@ -29,59 +36,47 @@ public class Ativos extends BaseActiveRecord<Ativos> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idATIVOS", nullable = false, updatable = false)
+	@Column(name = "idativos", nullable = false, updatable = false)
  	private Integer idativos;
-	@Size(max = 45)
-	@Column(name = "valor_venda")
-	private String valorVenda;
-	@Size(max = 45)
-	@Column(name = "valor_compra")
-	private String valorCompra;
-	@Size(max = 45)
-	@Column(name = "data_compra")
-	private String dataCompra;
-	@Size(max = 45)
-	@Column(name = "data_venda")
-	private String dataVenda;
-	@Size(max = 45)
-	@Column(name = "estado")
-	private String estado;
-	@Size(max = 45)
-	@Column(name = "garantia")
-	private String garantia;
-	@Size(max = 45)
-	@Column(name = "categoria")
-	private String categoria;
-	@Size(max = 45)
-	@Column(name = "codigo")
-	private String codigo;
 	@Size(max = 45)
 	@Column(name = "nome")
 	private String nome;
 	@Size(max = 45)
-	@Column(name = "obs")
-	private String obs;
+	@Column(name = "tipo")
+	private String tipo;
 	@Size(max = 45)
-	@Column(name = "tamanho")
-	private String tamanho;
+	@Column(name = "dataaquisicao")
+	private String dataaquisicao;
+	@Size(max = 45)
+	@Column(name = "valoraquisicao")
+	private String valoraquisicao;
+	@Size(max = 45)
+	@Column(name = "vidautil")
+	private String vidautil;
+	@Size(max = 45)
+	@Column(name = "datadepreciacao")
+	private String datadepreciacao;
+	@Size(max = 45)
+	@Column(name = "estado")
+	private String estado;
 	@NotNull
-	@Column(name = "DEPARTAMENTOS_idDEPARTAMENTOS")
-	private Integer departamentosIddepartamentos;
+	@ManyToOne
+	@JoinColumn(name = "departamento_iddepartamento", foreignKey = @ForeignKey(name = "ativos_departamento_iddepartamento_fkey"), referencedColumnName="iddepartamento")
+	private Departamento departamentoIddepartamento;
 	@NotNull
-	@Column(name = "UTILIZADORES_idUtilizadores")
-	private Integer utilizadoresIdutilizadores;
+	@ManyToOne
+	@JoinColumn(name = "geolocalizacao_idgeolocalizacao", foreignKey = @ForeignKey(name = "ativos_geolocalizacao_idgeolocalizacao_fkey"), referencedColumnName="idgeolocalizacao")
+	private Geolocalizacao geolocalizacaoIdgeolocalizacao;
 	@NotNull
-	@Column(name = "GEOLOCALIZACAO_idGEOLOCALIZACAO")
-	private Integer geolocalizacaoIdgeolocalizacao;
-	@NotNull
-	@Column(name = "REQUISICAO_idREQUISICAO")
-	private Integer requisicaoIdrequisicao;
-	@NotNull
-	@Column(name = "FORNECEDORES_idFORNECEDOR")
-	private Integer fornecedoresIdfornecedor;
-	@NotNull
-	@Column(name = "MARCAS_id")
-	private Integer marcasId;
+	@ManyToOne
+	@JoinColumn(name = "forcenecedor_idforcenecedor", foreignKey = @ForeignKey(name = "ativos_forcenecedor_idforcenecedor_fkey"), referencedColumnName="idforcenecedor")
+	private Forcenecedor forcenecedorIdforcenecedor;
+	@Size(max = 45)
+	@Column(name = "dimensao")
+	private String dimensao;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "forcenecedorIdforcenecedor")
+	private List<Ativos> ativosList;
 
 	public Integer getIdativos() { 
 		return this.idativos;
@@ -89,70 +84,6 @@ public class Ativos extends BaseActiveRecord<Ativos> {
 
 	public void setIdativos(Integer idativos) {
 		 this.idativos = idativos;
-	}
-
-	public String getValorVenda() { 
-		return this.valorVenda;
-	}
-
-	public void setValorVenda(String valorVenda) {
-		 this.valorVenda = valorVenda;
-	}
-
-	public String getValorCompra() { 
-		return this.valorCompra;
-	}
-
-	public void setValorCompra(String valorCompra) {
-		 this.valorCompra = valorCompra;
-	}
-
-	public String getDataCompra() { 
-		return this.dataCompra;
-	}
-
-	public void setDataCompra(String dataCompra) {
-		 this.dataCompra = dataCompra;
-	}
-
-	public String getDataVenda() { 
-		return this.dataVenda;
-	}
-
-	public void setDataVenda(String dataVenda) {
-		 this.dataVenda = dataVenda;
-	}
-
-	public String getEstado() { 
-		return this.estado;
-	}
-
-	public void setEstado(String estado) {
-		 this.estado = estado;
-	}
-
-	public String getGarantia() { 
-		return this.garantia;
-	}
-
-	public void setGarantia(String garantia) {
-		 this.garantia = garantia;
-	}
-
-	public String getCategoria() { 
-		return this.categoria;
-	}
-
-	public void setCategoria(String categoria) {
-		 this.categoria = categoria;
-	}
-
-	public String getCodigo() { 
-		return this.codigo;
-	}
-
-	public void setCodigo(String codigo) {
-		 this.codigo = codigo;
 	}
 
 	public String getNome() { 
@@ -163,89 +94,107 @@ public class Ativos extends BaseActiveRecord<Ativos> {
 		 this.nome = nome;
 	}
 
-	public String getObs() { 
-		return this.obs;
+	public String getTipo() { 
+		return this.tipo;
 	}
 
-	public void setObs(String obs) {
-		 this.obs = obs;
+	public void setTipo(String tipo) {
+		 this.tipo = tipo;
 	}
 
-	public String getTamanho() { 
-		return this.tamanho;
+	public String getDataaquisicao() { 
+		return this.dataaquisicao;
 	}
 
-	public void setTamanho(String tamanho) {
-		 this.tamanho = tamanho;
+	public void setDataaquisicao(String dataaquisicao) {
+		 this.dataaquisicao = dataaquisicao;
 	}
 
-	public Integer getDepartamentosIddepartamentos() { 
-		return this.departamentosIddepartamentos;
+	public String getValoraquisicao() { 
+		return this.valoraquisicao;
 	}
 
-	public void setDepartamentosIddepartamentos(Integer departamentosIddepartamentos) {
-		 this.departamentosIddepartamentos = departamentosIddepartamentos;
+	public void setValoraquisicao(String valoraquisicao) {
+		 this.valoraquisicao = valoraquisicao;
 	}
 
-	public Integer getUtilizadoresIdutilizadores() { 
-		return this.utilizadoresIdutilizadores;
+	public String getVidautil() { 
+		return this.vidautil;
 	}
 
-	public void setUtilizadoresIdutilizadores(Integer utilizadoresIdutilizadores) {
-		 this.utilizadoresIdutilizadores = utilizadoresIdutilizadores;
+	public void setVidautil(String vidautil) {
+		 this.vidautil = vidautil;
 	}
 
-	public Integer getGeolocalizacaoIdgeolocalizacao() { 
+	public String getDatadepreciacao() { 
+		return this.datadepreciacao;
+	}
+
+	public void setDatadepreciacao(String datadepreciacao) {
+		 this.datadepreciacao = datadepreciacao;
+	}
+
+	public String getEstado() { 
+		return this.estado;
+	}
+
+	public void setEstado(String estado) {
+		 this.estado = estado;
+	}
+
+	public Departamento getDepartamentoIddepartamento() { 
+		return this.departamentoIddepartamento;
+	}
+
+	public void setDepartamentoIddepartamento(Departamento departamentoIddepartamento) {
+		 this.departamentoIddepartamento = departamentoIddepartamento;
+	}
+
+	public Geolocalizacao getGeolocalizacaoIdgeolocalizacao() { 
 		return this.geolocalizacaoIdgeolocalizacao;
 	}
 
-	public void setGeolocalizacaoIdgeolocalizacao(Integer geolocalizacaoIdgeolocalizacao) {
+	public void setGeolocalizacaoIdgeolocalizacao(Geolocalizacao geolocalizacaoIdgeolocalizacao) {
 		 this.geolocalizacaoIdgeolocalizacao = geolocalizacaoIdgeolocalizacao;
 	}
 
-	public Integer getRequisicaoIdrequisicao() { 
-		return this.requisicaoIdrequisicao;
+	public Forcenecedor getForcenecedorIdforcenecedor() { 
+		return this.forcenecedorIdforcenecedor;
 	}
 
-	public void setRequisicaoIdrequisicao(Integer requisicaoIdrequisicao) {
-		 this.requisicaoIdrequisicao = requisicaoIdrequisicao;
+	public void setForcenecedorIdforcenecedor(Forcenecedor forcenecedorIdforcenecedor) {
+		 this.forcenecedorIdforcenecedor = forcenecedorIdforcenecedor;
 	}
 
-	public Integer getFornecedoresIdfornecedor() { 
-		return this.fornecedoresIdfornecedor;
+	public String getDimensao() { 
+		return this.dimensao;
 	}
 
-	public void setFornecedoresIdfornecedor(Integer fornecedoresIdfornecedor) {
-		 this.fornecedoresIdfornecedor = fornecedoresIdfornecedor;
+	public void setDimensao(String dimensao) {
+		 this.dimensao = dimensao;
 	}
 
-	public Integer getMarcasId() { 
-		return this.marcasId;
+	@XmlTransient
+	public List<Ativos> getativosList() {
+		return ativosList;
 	}
-
-	public void setMarcasId(Integer marcasId) {
-		 this.marcasId = marcasId;
+	public void setativosList(List<Ativos> ativosList) {
+		this.ativosList = ativosList;
 	}
 
 public static final class Field {
 	public static final String IDATIVOS = "idativos";
-	public static final String VALOR_VENDA = "valorVenda";
-	public static final String VALOR_COMPRA = "valorCompra";
-	public static final String DATA_COMPRA = "dataCompra";
-	public static final String DATA_VENDA = "dataVenda";
-	public static final String ESTADO = "estado";
-	public static final String GARANTIA = "garantia";
-	public static final String CATEGORIA = "categoria";
-	public static final String CODIGO = "codigo";
 	public static final String NOME = "nome";
-	public static final String OBS = "obs";
-	public static final String TAMANHO = "tamanho";
-	public static final String DEPARTAMENTOS_IDDEPARTAMENTOS = "departamentosIddepartamentos";
-	public static final String UTILIZADORES_IDUTILIZADORES = "utilizadoresIdutilizadores";
+	public static final String TIPO = "tipo";
+	public static final String DATAAQUISICAO = "dataaquisicao";
+	public static final String VALORAQUISICAO = "valoraquisicao";
+	public static final String VIDAUTIL = "vidautil";
+	public static final String DATADEPRECIACAO = "datadepreciacao";
+	public static final String ESTADO = "estado";
+	public static final String DEPARTAMENTO_IDDEPARTAMENTO = "departamentoIddepartamento";
 	public static final String GEOLOCALIZACAO_IDGEOLOCALIZACAO = "geolocalizacaoIdgeolocalizacao";
-	public static final String REQUISICAO_IDREQUISICAO = "requisicaoIdrequisicao";
-	public static final String FORNECEDORES_IDFORNECEDOR = "fornecedoresIdfornecedor";
-	public static final String MARCAS_ID = "marcasId";
+	public static final String FORCENECEDOR_IDFORCENECEDOR = "forcenecedorIdforcenecedor";
+	public static final String DIMENSAO = "dimensao";
 
 	private Field() {}
 	}

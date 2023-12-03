@@ -1,17 +1,17 @@
 package nosi.webapps.active_management_inps.dao;
 
-import javax.persistence.GeneratedValue;
-import nosi.base.ActiveRecord.BaseActiveRecord;
-import jakarta.validation.constraints.Size;
-import javax.persistence.Table;
-import javax.persistence.NamedQuery;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Column;
+import jakarta.validation.constraints.Size;
+import nosi.base.ActiveRecord.BaseActiveRecord;
+import javax.persistence.Entity;
 import javax.persistence.GenerationType;
+import javax.persistence.NamedQuery;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Table;
+import javax.persistence.Id;
 
 /**
- * @author: Nositeste 02-12-2023
+ * @author: Nositeste 03-12-2023
 */
 //@XmlRootElement // Can be used for REST / XML API
 
@@ -28,20 +28,23 @@ public class Geolocalizacao extends BaseActiveRecord<Geolocalizacao> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idGEOLOCALIZACAO", nullable = false, updatable = false)
+	@Column(name = "idgeolocalizacao", nullable = false, updatable = false)
  	private Integer idgeolocalizacao;
-	@Size(max = 100)
+	@Size(max = 45)
 	@Column(name = "pais")
 	private String pais;
-	@Size(max = 100)
+	@Size(max = 45)
 	@Column(name = "ilha")
 	private String ilha;
-	@Size(max = 100)
+	@Size(max = 45)
 	@Column(name = "cidade")
 	private String cidade;
-	@Size(max = 100)
+	@Size(max = 45)
 	@Column(name = "rua")
 	private String rua;
+	@Size(max = 45)
+	@Column(name = "coordenadas")
+	private String coordenadas;
 
 	public Integer getIdgeolocalizacao() { 
 		return this.idgeolocalizacao;
@@ -83,12 +86,21 @@ public class Geolocalizacao extends BaseActiveRecord<Geolocalizacao> {
 		 this.rua = rua;
 	}
 
+	public String getCoordenadas() { 
+		return this.coordenadas;
+	}
+
+	public void setCoordenadas(String coordenadas) {
+		 this.coordenadas = coordenadas;
+	}
+
 public static final class Field {
 	public static final String IDGEOLOCALIZACAO = "idgeolocalizacao";
 	public static final String PAIS = "pais";
 	public static final String ILHA = "ilha";
 	public static final String CIDADE = "cidade";
 	public static final String RUA = "rua";
+	public static final String COORDENADAS = "coordenadas";
 
 	private Field() {}
 	}

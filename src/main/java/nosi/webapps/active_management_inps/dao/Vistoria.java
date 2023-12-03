@@ -1,18 +1,21 @@
 package nosi.webapps.active_management_inps.dao;
 
-import javax.persistence.GeneratedValue;
-import nosi.base.ActiveRecord.BaseActiveRecord;
-import jakarta.validation.constraints.Size;
-import javax.persistence.Table;
-import javax.persistence.NamedQuery;
-import java.time.LocalDate;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Column;
+import javax.persistence.ManyToOne;
+import nosi.base.ActiveRecord.BaseActiveRecord;
 import javax.persistence.GenerationType;
+import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import jakarta.validation.constraints.Size;
+import javax.persistence.JoinColumn;
+import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
+import jakarta.validation.constraints.NotNull;
+import javax.persistence.Table;
+import javax.persistence.Id;
 
 /**
- * @author: Nositeste 02-12-2023
+ * @author: Nositeste 03-12-2023
 */
 //@XmlRootElement // Can be used for REST / XML API
 
@@ -29,24 +32,25 @@ public class Vistoria extends BaseActiveRecord<Vistoria> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idVISTORIA", nullable = false, updatable = false)
+	@Column(name = "idvistoria", nullable = false, updatable = false)
  	private Integer idvistoria;
 	@Size(max = 45)
-	@Column(name = "tipo")
-	private String tipo;
+	@Column(name = "datavistoria")
+	private String datavistoria;
 	@Size(max = 45)
-	@Column(name = "auditor")
-	private String auditor;
-	@Column(name = "data_inicio")
-	private LocalDate dataInicio;
-	@Column(name = "data_fim")
-	private LocalDate dataFim;
+	@Column(name = "tipo1vistoria")
+	private String tipo1vistoria;
 	@Size(max = 45)
-	@Column(name = "custo")
-	private String custo;
-	@Size(max = 45)
-	@Column(name = "tipovistoria")
-	private String tipovistoria;
+	@Column(name = "custovistoria")
+	private String custovistoria;
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name = "ativos_idativos", foreignKey = @ForeignKey(name = "vistoria_ativos_idativos_fkey"), referencedColumnName="idativos")
+	private Ativos ativosIdativos;
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name = "funcionarios_idfuncionarios", foreignKey = @ForeignKey(name = "vistoria_funcionarios_idfuncionarios_fkey"), referencedColumnName="idfuncionarios")
+	private Funcionarios funcionariosIdfuncionarios;
 
 	public Integer getIdvistoria() { 
 		return this.idvistoria;
@@ -56,62 +60,53 @@ public class Vistoria extends BaseActiveRecord<Vistoria> {
 		 this.idvistoria = idvistoria;
 	}
 
-	public String getTipo() { 
-		return this.tipo;
+	public String getDatavistoria() { 
+		return this.datavistoria;
 	}
 
-	public void setTipo(String tipo) {
-		 this.tipo = tipo;
+	public void setDatavistoria(String datavistoria) {
+		 this.datavistoria = datavistoria;
 	}
 
-	public String getAuditor() { 
-		return this.auditor;
+	public String getTipo1vistoria() { 
+		return this.tipo1vistoria;
 	}
 
-	public void setAuditor(String auditor) {
-		 this.auditor = auditor;
+	public void setTipo1vistoria(String tipo1vistoria) {
+		 this.tipo1vistoria = tipo1vistoria;
 	}
 
-	public LocalDate getDataInicio() { 
-		return this.dataInicio;
+	public String getCustovistoria() { 
+		return this.custovistoria;
 	}
 
-	public void setDataInicio(LocalDate dataInicio) {
-		 this.dataInicio = dataInicio;
+	public void setCustovistoria(String custovistoria) {
+		 this.custovistoria = custovistoria;
 	}
 
-	public LocalDate getDataFim() { 
-		return this.dataFim;
+	public Ativos getAtivosIdativos() { 
+		return this.ativosIdativos;
 	}
 
-	public void setDataFim(LocalDate dataFim) {
-		 this.dataFim = dataFim;
+	public void setAtivosIdativos(Ativos ativosIdativos) {
+		 this.ativosIdativos = ativosIdativos;
 	}
 
-	public String getCusto() { 
-		return this.custo;
+	public Funcionarios getFuncionariosIdfuncionarios() { 
+		return this.funcionariosIdfuncionarios;
 	}
 
-	public void setCusto(String custo) {
-		 this.custo = custo;
-	}
-
-	public String getTipovistoria() { 
-		return this.tipovistoria;
-	}
-
-	public void setTipovistoria(String tipovistoria) {
-		 this.tipovistoria = tipovistoria;
+	public void setFuncionariosIdfuncionarios(Funcionarios funcionariosIdfuncionarios) {
+		 this.funcionariosIdfuncionarios = funcionariosIdfuncionarios;
 	}
 
 public static final class Field {
 	public static final String IDVISTORIA = "idvistoria";
-	public static final String TIPO = "tipo";
-	public static final String AUDITOR = "auditor";
-	public static final String DATA_INICIO = "dataInicio";
-	public static final String DATA_FIM = "dataFim";
-	public static final String CUSTO = "custo";
-	public static final String TIPOVISTORIA = "tipovistoria";
+	public static final String DATAVISTORIA = "datavistoria";
+	public static final String TIPO1VISTORIA = "tipo1vistoria";
+	public static final String CUSTOVISTORIA = "custovistoria";
+	public static final String ATIVOS_IDATIVOS = "ativosIdativos";
+	public static final String FUNCIONARIOS_IDFUNCIONARIOS = "funcionariosIdfuncionarios";
 
 	private Field() {}
 	}
