@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/activesmanagementinps/images/IGRP/IGRP2.4/app/active_management_inps/listagem_ativos/Listagem_ativos.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/activesmanagementinps/images/IGRP/IGRP2.4</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Listagem_ativos</page>
+    <app>active_management_inps</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.active_management_inps</package_db>
+        <package_html>Listagem_ativos</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=87</preserve_url>
+    </plsql>
+    <slide-menu file="../../../xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../../../xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Listagem ativos</title>
+        <page_header type="page_header_basic" xml-type="page_header_basic" title="Listagem ativos" gen-type="container" gen-group="">
+            <fields>
+                <page_header_description name="p_page_header_description" type="text" maxlength="4000">
+                    <label/>
+                    <value>Ipsum irure enim ad tempor ad ipsum et ipsum cupidatat laborum velit consequat.</value>
+                </page_header_description>
+            </fields>
+        </page_header>
+        <card_1 type="card" xml-type="form" title="Card" gen-type="container" gen-group="">
+            <fields/>
+        </card_1>
+        <table_ativo type="table" xml-type="table" title="Lista Ativos" gen-type="container" gen-group="true">
+            <fields>
+                <nome name="p_nome" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" filter="true" table="true" group_in="">
+                    <label>Nome</label>
+                </nome>
+                <id_ativos name="p_id_ativos" type="hidden" maxlength="30" showLabel="true" iskey="true" filter="true" table="true" group_in="" java-type="int" tag="id_ativos"/>
+                <tipo name="p_tipo" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" filter="true" table="true" group_in="">
+                    <label>Tipo</label>
+                </tipo>
+                <estado name="p_estado" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" filter="true" table="true" group_in="">
+                    <label>Estado</label>
+                </estado>
+                <categoria name="p_categoria" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" filter="true" table="true" group_in="">
+                    <label>Categoria</label>
+                </categoria>
+                <departamento name="p_departamento" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" filter="true" table="true" group_in="">
+                    <label>Departamento</label>
+                </departamento>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Voluptatem doloremque accusant</nome>
+                        <id_ativos name="p_id_ativos" tag="id_ativos">hidden-df89_347b</id_ativos>
+                        <tipo name="p_tipo">Sit ipsum natus adipiscing con</tipo>
+                        <estado name="p_estado">Laudantium sit ipsum lorem dol</estado>
+                        <categoria name="p_categoria">Consectetur aliqua perspiciati</categoria>
+                        <departamento name="p_departamento">Lorem perspiciatis natus totam</departamento>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Perspiciatis accusantium conse</nome>
+                        <id_ativos name="p_id_ativos" tag="id_ativos">hidden-15af_dcae</id_ativos>
+                        <tipo name="p_tipo">Officia sed stract lorem dolor</tipo>
+                        <estado name="p_estado">Stract elit amet consectetur s</estado>
+                        <categoria name="p_categoria">Rem perspiciatis doloremque la</categoria>
+                        <departamento name="p_departamento">Rem amet unde aperiam natus</departamento>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Deserunt lorem unde anim sit</nome>
+                        <id_ativos name="p_id_ativos" tag="id_ativos">hidden-9778_7d79</id_ativos>
+                        <tipo name="p_tipo">Amet aliqua totam deserunt str</tipo>
+                        <estado name="p_estado">Anim aperiam doloremque natus</estado>
+                        <categoria name="p_categoria">Dolor natus sit consectetur re</categoria>
+                        <departamento name="p_departamento">Accusantium ipsum aliqua offic</departamento>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Unde aperiam sit doloremque ip</nome>
+                        <id_ativos name="p_id_ativos" tag="id_ativos">hidden-9c20_e73b</id_ativos>
+                        <tipo name="p_tipo">Rem deserunt stract magna ipsu</tipo>
+                        <estado name="p_estado">Amet sit dolor officia deserun</estado>
+                        <categoria name="p_categoria">Unde ut amet stract ut</categoria>
+                        <departamento name="p_departamento">Sit sit magna consectetur adip</departamento>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Magna omnis aperiam perspiciat</nome>
+                        <id_ativos name="p_id_ativos" tag="id_ativos">hidden-63f6_303d</id_ativos>
+                        <tipo name="p_tipo">Adipiscing mollit magna sed pe</tipo>
+                        <estado name="p_estado">Sit sit sit lorem labore</estado>
+                        <categoria name="p_categoria">Anim magna anim deserunt totam</categoria>
+                        <departamento name="p_departamento">Totam deserunt sit ut mollit</departamento>
+                    </row>
+                </value>
+                <context-menu>
+                    <item id="button_afad_344e" type="specific" code="" class="info" rel="detalhes" refresh_components="">
+                        <title>Detalhes</title>
+                        <app>active_management_inps</app>
+                        <page>Registro_de_ativos</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.4/app/active_management_inps/registro_de_ativos/Registro_de_ativos.xml?</parameter>
+                        <target>_blank</target>
+                        <img position="left">btn-info|fa-eye</img>
+                        <preview>../images/IGRP/IGRP2.4/app/active_management_inps/registro_de_ativos/Registro_de_ativos.xml</preview>
+                    </item>
+                    <item id="button_4b0d_ab06" type="specific" code="" class="warning" rel="editar" refresh_components="" labelConfirm="Deseja realmente realizar esta operação?">
+                        <title>Editar</title>
+                        <app>active_management_inps</app>
+                        <page>Registro_de_ativos</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.4/app/active_management_inps/registro_de_ativos/Registro_de_ativos.xml?</parameter>
+                        <target>confirm</target>
+                        <img position="left">btn-warning|fa-pencil</img>
+                        <preview>../images/IGRP/IGRP2.4/app/active_management_inps/registro_de_ativos/Registro_de_ativos.xml</preview>
+                    </item>
+                    <item id="button_64e6_da63" type="specific" code="" class="danger" rel="eliminar" refresh_components="">
+                        <title>Eliminar</title>
+                        <app>active_management_inps</app>
+                        <page>Registro_de_ativos</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.4/app/active_management_inps/registro_de_ativos/Registro_de_ativos.xml?</parameter>
+                        <target>_blank</target>
+                        <img position="left">btn-danger|fa-trash</img>
+                        <preview>../images/IGRP/IGRP2.4/app/active_management_inps/registro_de_ativos/Registro_de_ativos.xml</preview>
+                    </item>
+                </context-menu>
+            </table>
+        </table_ativo>
+        <form_1 type="form" xml-type="form" title="Form" gen-type="container" gen-group="">
+            <fields>
+                <nome_ativo name="p_nome_ativo" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Nome Ativo</label>
+                    <value>Amet lorem sit anim aperiam</value>
+                </nome_ativo>
+                <departamento_p name="p_departamento_p" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Departamento</label>
+                    <value>Adipiscing stract dolor aliqua deserunt</value>
+                </departamento_p>
+            </fields>
+            <tools-bar>
+                <item id="button_dfb7_db79" type="form" code="" class="info" rel="pesquisar" custom_return="true" refresh_components="">
+                    <title>Pesquisar</title>
+                    <app>active_management_inps</app>
+                    <page>Listagem_ativos</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.4/app/active_management_inps/listagem_ativos/Listagem_ativos.xml?</parameter>
+                    <target>submit</target>
+                    <img position="left">btn-info|</img>
+                    <preview>../images/IGRP/IGRP2.4/app/active_management_inps/listagem_ativos/Listagem_ativos.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
+        <sectionheader_1 type="sectionheader" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <sectionheader_1_text type="text" name="p_sectionheader_1_text" persist="true" maxlength="4000">
+                    <value>
+                        <![CDATA[<p>Lista de Ativos</p>
+]]>
+                    </value>
+                </sectionheader_1_text>
+            </fields>
+        </sectionheader_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

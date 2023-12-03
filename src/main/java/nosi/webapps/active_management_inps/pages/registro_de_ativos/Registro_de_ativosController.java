@@ -29,8 +29,8 @@ public class Registro de AtivosController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		view.estado.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		view.categoria.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
+		view.estado.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		  ----#gen-example */
 		/* Start-Code-Block (index) *//* End-Code-Block (index) */
 		/*----#start-code(index)----*/

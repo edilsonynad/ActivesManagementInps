@@ -37,21 +37,57 @@
     <top_menu file="../../../xml/IGRP-top_menu.xml?v=2" />
     <content>
         <title>Registro de Ativos</title>
-        <form_1 type="form" xml-type="form" title="Informações do ativo" gen-type="container" gen-group="">
+        <sectionheader_1 type="sectionheader" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <sectionheader_1_text type="text" name="p_sectionheader_1_text" persist="true" maxlength="4000">
+                    <value>
+                        <![CDATA[<p>Informa&ccedil;&otilde;es Gerais&nbsp;</p>
+]]>
+                    </value>
+                </sectionheader_1_text>
+            </fields>
+        </sectionheader_1>
+        <form_1 type="form" xml-type="form" title="Form" gen-type="container" gen-group="">
             <fields>
                 <nome name="p_nome" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
                     <label>Nome</label>
-                    <value>Deserunt omnis laudantium adipiscing natus</value>
+                    <value>Perspiciatis totam elit doloremque totam</value>
                     <validations>
                         <validation>
                             <annotation>@NotNull</annotation>
                         </validation>
                     </validations>
                 </nome>
-                <codigo name="p_codigo" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
-                    <label>Código</label>
-                    <value>Rem sit sed mollit natus</value>
-                </codigo>
+                <categoria name="p_categoria" type="select" placeholder="" multiple="false" tags="false" load_service_data="false" domain="" maxlength="250" required="true" change="false" disabled="false" java-type="">
+                    <label>Categoria</label>
+                    <list>
+                        <option>
+                            <text>--</text>
+                            <value/>
+                        </option>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </categoria>
                 <estado name="p_estado" type="select" placeholder="" multiple="false" tags="false" load_service_data="false" domain="" maxlength="250" required="false" change="false" disabled="false" java-type="">
                     <label>Estado</label>
                     <list>
@@ -77,89 +113,85 @@
                         </option>
                     </list>
                 </estado>
-                <categoria name="p_categoria" type="select" placeholder="" multiple="false" tags="false" load_service_data="false" domain="" maxlength="250" required="false" change="false" disabled="false" java-type="">
-                    <label>Categoria</label>
-                    <list>
-                        <option>
-                            <text>--</text>
-                            <value/>
-                        </option>
-                        <option>
-                            <text>Option 1</text>
-                            <value>1</value>
-                        </option>
-                        <option>
-                            <text>Option 2</text>
-                            <value>2</value>
-                        </option>
-                        <option>
-                            <text>Option 3</text>
-                            <value>3</value>
-                        </option>
-                        <option>
-                            <text>Option 4</text>
-                            <value>4</value>
-                        </option>
-                    </list>
-                </categoria>
-                <garantia name="p_garantia" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" java-type="">
-                    <label>Garantia</label>
-                    <value>161</value>
-                </garantia>
+                <dimensao name="p_dimensao" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Dimensão</label>
+                    <value>Magna doloremque dolor magna aperiam</value>
+                </dimensao>
+                <data_aquisicao name="p_data_aquisicao" type="date" format="d-m-Y" enableTime="false" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="">
+                    <label>Data Aquisição</label>
+                    <value>07-05-2011</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </data_aquisicao>
+                <vida_util name="p_vida_util" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Vida util</label>
+                    <value>Ut doloremque rem laudantium labore</value>
+                </vida_util>
+                <valor_aquisisao name="p_valor_aquisisao" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Valor Aquisição</label>
+                    <value>Officia adipiscing magna perspiciatis aliqua</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </valor_aquisisao>
+                <data_depreciacao name="p_data_depreciacao" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Data Depreciação</label>
+                    <value>Officia sit lorem adipiscing perspiciatis</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </data_depreciacao>
+                <fornecedores name="p_fornecedores" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Fornecedores</label>
+                    <value>Doloremque magna anim natus totam</value>
+                </fornecedores>
             </fields>
         </form_1>
-        <sectionheader_1 type="sectionheader" xml-type="form" gen-type="container" gen-group="">
+        <atribuicao type="form" xml-type="form" title="Atribuição" gen-type="container" gen-group="">
             <fields>
-                <sectionheader_1_text type="text" name="p_sectionheader_1_text" persist="true" maxlength="4000">
-                    <value>
-                        <![CDATA[<p>Informa&ccedil;&otilde;es Gerais&nbsp;</p>
-]]>
-                    </value>
-                </sectionheader_1_text>
+                <departamento name="p_departamento" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Departamento</label>
+                    <value>Perspiciatis ipsum unde adipiscing mollit</value>
+                </departamento>
+                <pais name="p_pais" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>País</label>
+                    <value>Rem sit ut dolor omnis</value>
+                </pais>
+                <ilha name="p_ilha" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Ilha</label>
+                    <value>Magna ut aperiam labore adipiscing</value>
+                </ilha>
+                <cidade name="p_cidade" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Cidade</label>
+                    <value>Officia dolor officia amet sit</value>
+                </cidade>
+                <rua name="p_rua" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Rua</label>
+                    <value>Totam omnis sit accusantium elit</value>
+                </rua>
+                <coordenadas name="p_coordenadas" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
+                    <label>Coordenadas</label>
+                    <value>Elit anim perspiciatis natus elit</value>
+                </coordenadas>
             </fields>
-        </sectionheader_1>
+        </atribuicao>
         <sectionheader_2 type="sectionheader" xml-type="form" gen-type="container" gen-group="">
             <fields>
                 <sectionheader_2_text type="text" name="p_sectionheader_2_text" persist="true" maxlength="4000">
                     <value>
-                        <![CDATA[<p>Informa&ccedil;&otilde;es de compra/venda</p>
+                        <![CDATA[<p>Informa&ccedil;&otilde;es de atribui&ccedil;&atilde;o</p>
 ]]>
                     </value>
                 </sectionheader_2_text>
             </fields>
         </sectionheader_2>
-        <buyandsell type="form" xml-type="form" title="Informações de compra e venda" gen-type="container" gen-group="">
-            <fields>
-                <valor_da_compra name="p_valor_da_compra" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
-                    <label>Valor da compra</label>
-                    <value>Laudantium totam anim dolor accusantium</value>
-                </valor_da_compra>
-                <valor_da_venda name="p_valor_da_venda" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
-                    <label>Valor da venda </label>
-                    <value>Amet rem consectetur officia doloremque</value>
-                </valor_da_venda>
-                <data_da_compra name="p_data_da_compra" type="date" format="d-m-Y" enableTime="false" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="">
-                    <label>Data da compra </label>
-                    <value>02-04-2016</value>
-                </data_da_compra>
-                <data_da_venda name="p_data_da_venda" type="date" format="d-m-Y" enableTime="false" range="false" disableWeekends="false" disabledBeforetoday="false" daysoff="false" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="">
-                    <label>Data da venda</label>
-                    <value>07-02-2014</value>
-                </data_da_venda>
-            </fields>
-        </buyandsell>
-        <atribuicao type="form" xml-type="form" title="Atribuição" gen-type="container" gen-group="">
-            <fields>
-                <departamento name="p_departamento" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
-                    <label>Departamento</label>
-                    <value>Sed elit adipiscing magna deserunt</value>
-                </departamento>
-                <funcionario name="p_funcionario" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" disablehtml="true" placeholder="" inputmask="">
-                    <label>Funcionário </label>
-                    <value>Officia anim adipiscing labore aperiam</value>
-                </funcionario>
-            </fields>
-        </atribuicao>
     </content>
     <blockly>
         <imports></imports>

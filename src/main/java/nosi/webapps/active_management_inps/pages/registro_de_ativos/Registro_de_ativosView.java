@@ -8,93 +8,110 @@ import static nosi.core.i18n.Translator.gt;
 
 public class Registro de AtivosView extends View {
 
-	public Field nome;
-	public Field codigo;
-	public Field estado;
-	public Field categoria;
-	public Field garantia;
 	public Field sectionheader_1_text;
-	public Field sectionheader_2_text;
-	public Field valor_da_compra;
-	public Field valor_da_venda;
-	public Field data_da_compra;
-	public Field data_da_venda;
+	public Field nome;
+	public Field categoria;
+	public Field estado;
+	public Field dimensao;
+	public Field data_aquisicao;
+	public Field vida_util;
+	public Field valor_aquisisao;
+	public Field data_depreciacao;
+	public Field fornecedores;
 	public Field departamento;
-	public Field funcionario;
-	public IGRPForm form_1;
+	public Field pais;
+	public Field ilha;
+	public Field cidade;
+	public Field rua;
+	public Field coordenadas;
+	public Field sectionheader_2_text;
 	public IGRPSectionHeader sectionheader_1;
-	public IGRPSectionHeader sectionheader_2;
-	public IGRPForm buyandsell;
+	public IGRPForm form_1;
 	public IGRPForm atribuicao;
+	public IGRPSectionHeader sectionheader_2;
 
 
 	public Registro de AtivosView(){
 
 		this.setPageTitle("Registro de Ativos");
 			
-		form_1 = new IGRPForm("form_1","Informações do ativo");
-
 		sectionheader_1 = new IGRPSectionHeader("sectionheader_1","");
 
-		sectionheader_2 = new IGRPSectionHeader("sectionheader_2","");
-
-		buyandsell = new IGRPForm("buyandsell","Informações de compra e venda");
+		form_1 = new IGRPForm("form_1","Form");
 
 		atribuicao = new IGRPForm("atribuicao","Atribuição");
 
-		nome = new TextField(model,"nome");
-		nome.setLabel(gt("Nome"));
-		nome.propertie().add("name","p_nome").add("type","text").add("maxlength","250").add("required","true").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
-		
-		codigo = new TextField(model,"codigo");
-		codigo.setLabel(gt("Código"));
-		codigo.propertie().add("name","p_codigo").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
-		
-		estado = new ListField(model,"estado");
-		estado.setLabel(gt("Estado"));
-		estado.propertie().add("name","p_estado").add("type","select").add("placeholder",gt("")).add("multiple","false").add("tags","false").add("load_service_data","false").add("domain","").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","");
-		
-		categoria = new ListField(model,"categoria");
-		categoria.setLabel(gt("Categoria"));
-		categoria.propertie().add("name","p_categoria").add("type","select").add("placeholder",gt("")).add("multiple","false").add("tags","false").add("load_service_data","false").add("domain","").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","");
-		
-		garantia = new NumberField(model,"garantia");
-		garantia.setLabel(gt("Garantia"));
-		garantia.propertie().add("name","p_garantia").add("type","number").add("min","").add("max","").add("calculation","false").add("mathcal","").add("numberformat","").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("java-type","");
-		
+		sectionheader_2 = new IGRPSectionHeader("sectionheader_2","");
+
 		sectionheader_1_text = new TextField(model,"sectionheader_1_text");
 		sectionheader_1_text.setLabel(gt(""));
 		sectionheader_1_text.setValue(gt("<p>Informa&ccedil;&otilde;es Gerais&nbsp;</p>"));
 		sectionheader_1_text.propertie().add("type","text").add("name","p_sectionheader_1_text").add("maxlength","4000");
 		
-		sectionheader_2_text = new TextField(model,"sectionheader_2_text");
-		sectionheader_2_text.setLabel(gt(""));
-		sectionheader_2_text.setValue(gt("<p>Informa&ccedil;&otilde;es de compra/venda</p>"));
-		sectionheader_2_text.propertie().add("type","text").add("name","p_sectionheader_2_text").add("maxlength","4000");
+		nome = new TextField(model,"nome");
+		nome.setLabel(gt("Nome"));
+		nome.propertie().add("name","p_nome").add("type","text").add("maxlength","250").add("required","true").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
 		
-		valor_da_compra = new TextField(model,"valor_da_compra");
-		valor_da_compra.setLabel(gt("Valor da compra"));
-		valor_da_compra.propertie().add("name","p_valor_da_compra").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
+		categoria = new ListField(model,"categoria");
+		categoria.setLabel(gt("Categoria"));
+		categoria.propertie().add("name","p_categoria").add("type","select").add("placeholder",gt("")).add("multiple","false").add("tags","false").add("load_service_data","false").add("domain","").add("maxlength","250").add("required","true").add("disabled","false").add("java-type","");
 		
-		valor_da_venda = new TextField(model,"valor_da_venda");
-		valor_da_venda.setLabel(gt("Valor da venda "));
-		valor_da_venda.propertie().add("name","p_valor_da_venda").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
+		estado = new ListField(model,"estado");
+		estado.setLabel(gt("Estado"));
+		estado.propertie().add("name","p_estado").add("type","select").add("placeholder",gt("")).add("multiple","false").add("tags","false").add("load_service_data","false").add("domain","").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","");
 		
-		data_da_compra = new DateField(model,"data_da_compra");
-		data_da_compra.setLabel(gt("Data da compra "));
-		data_da_compra.propertie().add("name","p_data_da_compra").add("type","date").add("enableTime","false").add("range","false").add("disableWeekends","false").add("disabledBeforetoday","false").add("daysoff","false").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt(""));
+		dimensao = new TextField(model,"dimensao");
+		dimensao.setLabel(gt("Dimensão"));
+		dimensao.propertie().add("name","p_dimensao").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
 		
-		data_da_venda = new DateField(model,"data_da_venda");
-		data_da_venda.setLabel(gt("Data da venda"));
-		data_da_venda.propertie().add("name","p_data_da_venda").add("type","date").add("enableTime","false").add("range","false").add("disableWeekends","false").add("disabledBeforetoday","false").add("daysoff","false").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt(""));
+		data_aquisicao = new DateField(model,"data_aquisicao");
+		data_aquisicao.setLabel(gt("Data Aquisição"));
+		data_aquisicao.propertie().add("name","p_data_aquisicao").add("type","date").add("enableTime","false").add("range","false").add("disableWeekends","false").add("disabledBeforetoday","false").add("daysoff","false").add("maxlength","250").add("required","true").add("readonly","false").add("disabled","false").add("placeholder",gt(""));
+		
+		vida_util = new TextField(model,"vida_util");
+		vida_util.setLabel(gt("Vida util"));
+		vida_util.propertie().add("name","p_vida_util").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
+		
+		valor_aquisisao = new TextField(model,"valor_aquisisao");
+		valor_aquisisao.setLabel(gt("Valor Aquisição"));
+		valor_aquisisao.propertie().add("name","p_valor_aquisisao").add("type","text").add("maxlength","250").add("required","true").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
+		
+		data_depreciacao = new TextField(model,"data_depreciacao");
+		data_depreciacao.setLabel(gt("Data Depreciação"));
+		data_depreciacao.propertie().add("name","p_data_depreciacao").add("type","text").add("maxlength","250").add("required","true").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
+		
+		fornecedores = new TextField(model,"fornecedores");
+		fornecedores.setLabel(gt("Fornecedores"));
+		fornecedores.propertie().add("name","p_fornecedores").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
 		
 		departamento = new TextField(model,"departamento");
 		departamento.setLabel(gt("Departamento"));
 		departamento.propertie().add("name","p_departamento").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
 		
-		funcionario = new TextField(model,"funcionario");
-		funcionario.setLabel(gt("Funcionário "));
-		funcionario.propertie().add("name","p_funcionario").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
+		pais = new TextField(model,"pais");
+		pais.setLabel(gt("País"));
+		pais.propertie().add("name","p_pais").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
+		
+		ilha = new TextField(model,"ilha");
+		ilha.setLabel(gt("Ilha"));
+		ilha.propertie().add("name","p_ilha").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
+		
+		cidade = new TextField(model,"cidade");
+		cidade.setLabel(gt("Cidade"));
+		cidade.propertie().add("name","p_cidade").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
+		
+		rua = new TextField(model,"rua");
+		rua.setLabel(gt("Rua"));
+		rua.propertie().add("name","p_rua").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
+		
+		coordenadas = new TextField(model,"coordenadas");
+		coordenadas.setLabel(gt("Coordenadas"));
+		coordenadas.propertie().add("name","p_coordenadas").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("disablehtml","true").add("placeholder",gt("")).add("inputmask","");
+		
+		sectionheader_2_text = new TextField(model,"sectionheader_2_text");
+		sectionheader_2_text.setLabel(gt(""));
+		sectionheader_2_text.setValue(gt("<p>Informa&ccedil;&otilde;es de atribui&ccedil;&atilde;o</p>"));
+		sectionheader_2_text.propertie().add("type","text").add("name","p_sectionheader_2_text").add("maxlength","4000");
 		
 
 
@@ -104,45 +121,51 @@ public class Registro de AtivosView extends View {
 	@Override
 	public void render(){
 		
-		form_1.addField(nome);
-		form_1.addField(codigo);
-		form_1.addField(estado);
-		form_1.addField(categoria);
-		form_1.addField(garantia);
-
 		sectionheader_1.addField(sectionheader_1_text);
+
+		form_1.addField(nome);
+		form_1.addField(categoria);
+		form_1.addField(estado);
+		form_1.addField(dimensao);
+		form_1.addField(data_aquisicao);
+		form_1.addField(vida_util);
+		form_1.addField(valor_aquisisao);
+		form_1.addField(data_depreciacao);
+		form_1.addField(fornecedores);
+
+		atribuicao.addField(departamento);
+		atribuicao.addField(pais);
+		atribuicao.addField(ilha);
+		atribuicao.addField(cidade);
+		atribuicao.addField(rua);
+		atribuicao.addField(coordenadas);
 
 		sectionheader_2.addField(sectionheader_2_text);
 
-		buyandsell.addField(valor_da_compra);
-		buyandsell.addField(valor_da_venda);
-		buyandsell.addField(data_da_compra);
-		buyandsell.addField(data_da_venda);
-
-		atribuicao.addField(departamento);
-		atribuicao.addField(funcionario);
-
-		this.addToPage(form_1);
 		this.addToPage(sectionheader_1);
-		this.addToPage(sectionheader_2);
-		this.addToPage(buyandsell);
+		this.addToPage(form_1);
 		this.addToPage(atribuicao);
+		this.addToPage(sectionheader_2);
 	}
 		
 	@Override
 	public void setModel(Model model) {
 		
 		nome.setValue(model);
-		codigo.setValue(model);
-		estado.setValue(model);
 		categoria.setValue(model);
-		garantia.setValue(model);
-		valor_da_compra.setValue(model);
-		valor_da_venda.setValue(model);
-		data_da_compra.setValue(model);
-		data_da_venda.setValue(model);
+		estado.setValue(model);
+		dimensao.setValue(model);
+		data_aquisicao.setValue(model);
+		vida_util.setValue(model);
+		valor_aquisisao.setValue(model);
+		data_depreciacao.setValue(model);
+		fornecedores.setValue(model);
 		departamento.setValue(model);
-		funcionario.setValue(model);	
+		pais.setValue(model);
+		ilha.setValue(model);
+		cidade.setValue(model);
+		rua.setValue(model);
+		coordenadas.setValue(model);	
 
 		}
 }

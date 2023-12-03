@@ -7,65 +7,74 @@ import nosi.core.validator.constraints.*;
 
 public class Registro de Ativos extends Model{		
 
+	@RParam(rParamName = "p_sectionheader_1_text")
+	private String sectionheader_1_text;
+
 	@NotNull()
 	@RParam(rParamName = "p_nome")
 	private String nome;
 
-	@RParam(rParamName = "p_codigo")
-	private String codigo;
+	@NotNull()
+	@RParam(rParamName = "p_categoria")
+	private String categoria;
 
 	@RParam(rParamName = "p_estado")
 	private String estado;
 
-	@RParam(rParamName = "p_categoria")
-	private String categoria;
+	@RParam(rParamName = "p_dimensao")
+	private String dimensao;
 
-	@RParam(rParamName = "p_garantia")
-	private Integer garantia;
+	@NotNull()
+	@RParam(rParamName = "p_data_aquisicao")
+	private String data_aquisicao;
 
-	@RParam(rParamName = "p_sectionheader_1_text")
-	private String sectionheader_1_text;
+	@RParam(rParamName = "p_vida_util")
+	private String vida_util;
 
-	@RParam(rParamName = "p_sectionheader_2_text")
-	private String sectionheader_2_text;
+	@NotNull()
+	@RParam(rParamName = "p_valor_aquisisao")
+	private String valor_aquisisao;
 
-	@RParam(rParamName = "p_valor_da_compra")
-	private String valor_da_compra;
+	@NotNull()
+	@RParam(rParamName = "p_data_depreciacao")
+	private String data_depreciacao;
 
-	@RParam(rParamName = "p_valor_da_venda")
-	private String valor_da_venda;
-
-	@RParam(rParamName = "p_data_da_compra")
-	private String data_da_compra;
-
-	@RParam(rParamName = "p_data_da_venda")
-	private String data_da_venda;
+	@RParam(rParamName = "p_fornecedores")
+	private String fornecedores;
 
 	@RParam(rParamName = "p_departamento")
 	private String departamento;
 
-	@RParam(rParamName = "p_funcionario")
-	private String funcionario;
+	@RParam(rParamName = "p_pais")
+	private String pais;
+
+	@RParam(rParamName = "p_ilha")
+	private String ilha;
+
+	@RParam(rParamName = "p_cidade")
+	private String cidade;
+
+	@RParam(rParamName = "p_rua")
+	private String rua;
+
+	@RParam(rParamName = "p_coordenadas")
+	private String coordenadas;
+
+	@RParam(rParamName = "p_sectionheader_2_text")
+	private String sectionheader_2_text;
+	
+	public void setSectionheader_1_text(String sectionheader_1_text){
+		this.sectionheader_1_text = sectionheader_1_text;
+	}
+	public String getSectionheader_1_text(){
+		return this.sectionheader_1_text;
+	}
 	
 	public void setNome(String nome){
 		this.nome = nome;
 	}
 	public String getNome(){
 		return this.nome;
-	}
-	
-	public void setCodigo(String codigo){
-		this.codigo = codigo;
-	}
-	public String getCodigo(){
-		return this.codigo;
-	}
-	
-	public void setEstado(String estado){
-		this.estado = estado;
-	}
-	public String getEstado(){
-		return this.estado;
 	}
 	
 	public void setCategoria(String categoria){
@@ -75,53 +84,53 @@ public class Registro de Ativos extends Model{
 		return this.categoria;
 	}
 	
-	public void setGarantia(Integer garantia){
-		this.garantia = garantia;
+	public void setEstado(String estado){
+		this.estado = estado;
 	}
-	public Integer getGarantia(){
-		return this.garantia;
-	}
-	
-	public void setSectionheader_1_text(String sectionheader_1_text){
-		this.sectionheader_1_text = sectionheader_1_text;
-	}
-	public String getSectionheader_1_text(){
-		return this.sectionheader_1_text;
+	public String getEstado(){
+		return this.estado;
 	}
 	
-	public void setSectionheader_2_text(String sectionheader_2_text){
-		this.sectionheader_2_text = sectionheader_2_text;
+	public void setDimensao(String dimensao){
+		this.dimensao = dimensao;
 	}
-	public String getSectionheader_2_text(){
-		return this.sectionheader_2_text;
-	}
-	
-	public void setValor_da_compra(String valor_da_compra){
-		this.valor_da_compra = valor_da_compra;
-	}
-	public String getValor_da_compra(){
-		return this.valor_da_compra;
+	public String getDimensao(){
+		return this.dimensao;
 	}
 	
-	public void setValor_da_venda(String valor_da_venda){
-		this.valor_da_venda = valor_da_venda;
+	public void setData_aquisicao(String data_aquisicao){
+		this.data_aquisicao = data_aquisicao;
 	}
-	public String getValor_da_venda(){
-		return this.valor_da_venda;
-	}
-	
-	public void setData_da_compra(String data_da_compra){
-		this.data_da_compra = data_da_compra;
-	}
-	public String getData_da_compra(){
-		return this.data_da_compra;
+	public String getData_aquisicao(){
+		return this.data_aquisicao;
 	}
 	
-	public void setData_da_venda(String data_da_venda){
-		this.data_da_venda = data_da_venda;
+	public void setVida_util(String vida_util){
+		this.vida_util = vida_util;
 	}
-	public String getData_da_venda(){
-		return this.data_da_venda;
+	public String getVida_util(){
+		return this.vida_util;
+	}
+	
+	public void setValor_aquisisao(String valor_aquisisao){
+		this.valor_aquisisao = valor_aquisisao;
+	}
+	public String getValor_aquisisao(){
+		return this.valor_aquisisao;
+	}
+	
+	public void setData_depreciacao(String data_depreciacao){
+		this.data_depreciacao = data_depreciacao;
+	}
+	public String getData_depreciacao(){
+		return this.data_depreciacao;
+	}
+	
+	public void setFornecedores(String fornecedores){
+		this.fornecedores = fornecedores;
+	}
+	public String getFornecedores(){
+		return this.fornecedores;
 	}
 	
 	public void setDepartamento(String departamento){
@@ -131,11 +140,46 @@ public class Registro de Ativos extends Model{
 		return this.departamento;
 	}
 	
-	public void setFuncionario(String funcionario){
-		this.funcionario = funcionario;
+	public void setPais(String pais){
+		this.pais = pais;
 	}
-	public String getFuncionario(){
-		return this.funcionario;
+	public String getPais(){
+		return this.pais;
+	}
+	
+	public void setIlha(String ilha){
+		this.ilha = ilha;
+	}
+	public String getIlha(){
+		return this.ilha;
+	}
+	
+	public void setCidade(String cidade){
+		this.cidade = cidade;
+	}
+	public String getCidade(){
+		return this.cidade;
+	}
+	
+	public void setRua(String rua){
+		this.rua = rua;
+	}
+	public String getRua(){
+		return this.rua;
+	}
+	
+	public void setCoordenadas(String coordenadas){
+		this.coordenadas = coordenadas;
+	}
+	public String getCoordenadas(){
+		return this.coordenadas;
+	}
+	
+	public void setSectionheader_2_text(String sectionheader_2_text){
+		this.sectionheader_2_text = sectionheader_2_text;
+	}
+	public String getSectionheader_2_text(){
+		return this.sectionheader_2_text;
 	}
 
 
